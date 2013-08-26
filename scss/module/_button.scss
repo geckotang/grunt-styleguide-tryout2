@@ -1,0 +1,52 @@
+/*
+# Mixins
+
+## 普通のボタン
+
+`@include button(#1B6AA5, white, 1em);`
+
+### 引数:
+
+- `background`: Background of the button;
+- `color`: Color of the button;
+- `font-size`: Font size of the button;
+
+*/
+
+@mixin button($background, $color, $font-size){
+	display: inline-block;
+	font-size: $font-size;
+	color: $color;
+	background-color: $background;
+	padding: 1em;
+	border-radius: 10px;
+	&:hover {
+		color: $background;
+		background-color: $color;
+	}
+	&:active {
+		position: relative;
+		top: 2px;
+		color: $background;
+		background-color: $color;
+	}
+	&.is-disabled {
+		color: #fff;
+		background-color: #ccc;
+	}
+}
+
+/*
+### サンプル
+
+```
+<a class="button" href="#">normal</a>
+<a class="button :hover" href="#">hover</a>
+<a class="button :active" href="#">active</a>
+<a class="button is-disabled" href="#">disabled</a>
+```
+
+*/
+.button{
+	@include button(#1B6AA5, #ccc, 1.2em);
+}

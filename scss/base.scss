@@ -1,0 +1,12 @@
+/*
+# Base
+module以下のscssを読み込む
+
+- `bourbon` ([このページヘ](http://bourbon.io/))
+- `button` ([このページヘ](module-button.html))
+
+*/
+@import "../lib/bourbon/_bourbon";
+@import "module/_button";
+@import "module/_list";
+

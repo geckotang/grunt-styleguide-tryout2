@@ -1,0 +1,30 @@
+/*
+# List
+
+## よく使うリスト
+
+```
+<ol>
+	<li>リストリストリストリストリストリストリスト</li>
+	<li>リストリストリストリストリストリストリスト</li>
+	<li>リストリストリストリストリストリストリスト</li>
+</ol>
+```
+
+*/
+ol {
+	> li {
+		background-color: #F4F5F7;
+		@include background-image( linear-gradient(to left, #FFF, #F4F5F7) );
+		font-family: $lucida-grande;
+		position: relative;
+		@include transition( all 0.8s );
+		&::after {
+			content: " ";
+			width: 23px;
+			height: 23px;
+			@include position( absolute, 10px -13px 0 0 );
+			@include transform( rotate(45deg) skew(20deg, 30deg) );
+		}
+	}
+}
